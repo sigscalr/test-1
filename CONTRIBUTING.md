@@ -1,4 +1,4 @@
-# Hyperion Contributing Guide
+# Hyperion Contributor Guide
 
 * [New Contributor Guide](#contributing-guide)
   * [Ways to Contribute](#ways-to-contribute)
@@ -14,8 +14,7 @@ As you get started, you are in the best position to give us feedback on areas of
 our project that we need help with including:
 
 * Problems found during setting up a new developer environment
-* Gaps in our Quickstart Guide or documentation
-* Bugs in our automation scripts
+* Gaps in our documentation
 
 If anything doesn't make sense, or doesn't work when you run it, please open a
 bug report and let us know!
@@ -26,7 +25,6 @@ bug report and let us know!
 We welcome many different types of contributions including:
 
 * New features
-* Builds, CI/CD
 * Bug fixes
 * Documentation
 * Issue Triage
@@ -58,15 +56,17 @@ The best way to reach us with a question when contributing is to ask on:
 
 ## Pull Request Lifecycle
 
-1. Open a PR and request reviews only after the full PR is ready for review.
-   - Open *DRAFT* PRs to get feedback on incomplete PRs and let reviewers know what they should be reviewing
-2. Before merging, make sure that all CI/CD tests pass
-   - For larger PRs touching multiple modules, run tests locally using `sigscalr-client`
-   - In addition, for larger PRs, make sure to validate ES compatibility
-   - If any configurations were added or changed, add them to `GETTING_STARTED.md`
-3. Always **squash and merge** any branch merging to `develop`
-4. Always **commit merge** when merging `develop` to `main`
-5. Merged pull request changes will be deployed with the next release.
+Once you have found the issue to be fixed or feature to be added, you can comment on the issue and put the approach you want to follow to solve the issue. Once we agree upon the approach, you can open a PR.
+
+1. Fork Hyperion repo and clone it on your local machine.
+2. Create branch with your changes.
+3. Make sure local tests work.
+4. Commit your changes to your fork.
+5. Verify that all automated CI tests pass for this PR.
+6. The new PR should not have any conflicts with hyperion develop** branch.
+7. Send us a pull request you just created.
+8. Once the change has been approved and merged, we will inform you in a comment.
+9. Merged pull request changes will be deployed with the next release.
 
 
 ## Development Environment Setup
@@ -97,11 +97,6 @@ In another terminal, start the ingestion via `sigscalr-client` by running:
 go run main.go ingest esbulk -t 10_000 -d http://localhost:8081/elastic --processCount 1 -n 1 -b 500 -g dynamic-user
 ```
 
-Send metrics via:
-```
-go run main.go ingest metrics -d http://localhost:8081/otsdb -t 1_000_000  -m 5 -p 20 -b 10_000
-```
-
 Look through the [sigscalr-client ReadMe](https://github.com/sigscalr/sigscalr-client/README.md) to see all command arguments.
 
 
@@ -115,13 +110,6 @@ go run main.go query -d http://localhost:80/elastic -n 10 -v
 ```
 
 
-The sigscalr-client also supports sending queries using:
-```
-go run main.go query esbulk -d http://localhost:80/elastic -n 10 -v
-go run main.go query otsdb -d http://localhost:80/elastic -n 10 -v
-```
-
-
 ## Pull Request Checklist
 
 When you submit your pull request, or you push new commits to it, our automated
@@ -130,17 +118,29 @@ passes these checks, but we also have more criteria than just that before we can
 accept and merge it. We recommend that you check the following things locally
 before you submit your code:
 
+Check goimports:
+```
+    go install golang.org/x/tools/cmd/goimports@latest
+    export PATH=$PATH:$(go env GOPATH)/bin
+    goimports -w .
+```
 lint:
-	golangci-lint run --timeout=3m
+```
+    golangci-lint run --timeout=3m
+```
 
 ut:
-	$(GO) test ./... -count 1
-
+```
+    $(GO) test ./... -count 1
+```
 build:
-	$(GO) mod download
-	$(GO) build -o sigscalr cmd/sigscalr/main.go
+```
+    $(GO) mod download
+    $(GO) build -o sigscalr cmd/sigscalr/main.go
+```
 
 run:
-	$(GO) build -o sigscalr cmd/sigscalr/main.go
-	./sigscalr --config server.yaml
-
+```
+    $(GO) build -o sigscalr cmd/sigscalr/main.go
+    ./sigscalr --config server.yaml
+```
