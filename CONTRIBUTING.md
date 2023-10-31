@@ -1,4 +1,4 @@
-# Hyperion Contributor Guide
+# Siglens Contributor Guide
 
 * [New Contributor Guide](#contributing-guide)
   * [Ways to Contribute](#ways-to-contribute)
@@ -29,7 +29,7 @@ We welcome many different types of contributions including:
 * Documentation
 * Issue Triage
 
-Not everything happens through a GitHub pull request. Please go to our [contact us](info@siglens.io) and let's discuss how we can work together. 
+Not everything happens through a GitHub pull request. Please email at info@siglens.io and let's discuss how we can work together. 
 
 
 ## Find an Issue
@@ -41,7 +41,7 @@ for any contributor. [good first issue](https://github.com/siglens/siglens/label
 Sometimes there won’t be any issues with these labels. That’s ok! There is
 likely still something for you to work on. If you want to contribute but you
 don’t know where to start or can't find a suitable issue, you can 
-[contact us](info@siglens.io)
+reach out to info@siglens.io
 
 Once you see an issue that you'd like to work on, please post a comment saying
 that you want to work on it. Something like `"I want to work on this"` is fine.
@@ -58,7 +58,7 @@ The best way to reach us with a question when contributing is to ask on:
 
 Once you have found the issue to be fixed or feature to be added, you can comment on the issue and put the approach you want to follow to solve the issue. Once we agree upon the approach, you can open a PR.
 
-1. Fork Hyperion repo and clone it on your local machine.
+1. Fork Siglens repo and clone it on your local machine.
 2. Create branch with your changes.
 3. Make sure local tests work.
 4. Commit your changes to your fork.
@@ -75,19 +75,19 @@ VS Code is the recomended IDE and offers good extensions and tools that will hel
 
 To locally run `golinter`, install from https://golangci-lint.run/usage/install/#local-installation
 
-### Start up Hyperion
+### Start up Siglens
 
-Once golang is installed, start up Hyperion by running the following command at the root of the repo:
+Once golang is installed, start up Siglens by running the following command at the root of the repo:
 ```
-go run cmd/sigscalr/main.go --config server.yaml
+go run cmd/siglens/main.go --config server.yaml
 ```
 
 By default, the UI server will start up on port `80` and the backend will start on port `8081`.
 
-You should be able to access `http://localhost:80` and see the Hyperion UI. If you are not able to, check `sigscalr.log` for any error messages.
+You should be able to access `http://localhost:80` and see the Siglens UI. If you are not able to, check `siglens.log` for any error messages.
 
 
-### Send Data to Hyperion
+### Send Data to Siglens
 
 To send data, clone the [sigscalr-client](https://github.com/sigscalr/sigscalr-client) repo.
 
@@ -99,7 +99,7 @@ go run main.go ingest esbulk -t 10_000 -d http://localhost:8081/elastic --proces
 Look through the [sigscalr-client ReadMe](https://github.com/sigscalr/sigscalr-client/README.md) to see all command arguments.
 
 
-### Send Queries on Hyperion
+### Send Queries on Siglens
 
 Using the UI, you should be able to send queries using our pipe search query langauge. Look through the dropdown highlighting different query syntax and try running some test queries on the UI.
 
@@ -135,11 +135,11 @@ ut:
 build:
 ```
     go mod download
-    go build -o sigscalr cmd/sigscalr/main.go
+    go build -o siglens cmd/siglens/main.go
 ```
 
 run:
 ```
-    go build -o sigscalr cmd/sigscalr/main.go
-    ./sigscalr --config server.yaml
+    go build -o siglens cmd/siglens/main.go
+    ./siglens --config server.yaml
 ```
