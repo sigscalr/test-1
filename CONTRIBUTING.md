@@ -29,22 +29,22 @@ We welcome many different types of contributions including:
 * Documentation
 * Issue Triage
 
-Not everything happens through a GitHub pull request. Please go to our [contact us](https://www.sigscalr.io/contact.html) and let's discuss how we can work together. 
+Not everything happens through a GitHub pull request. Please go to our [contact us](info@siglens.io) and let's discuss how we can work together. 
 
 
 ## Find an Issue
 
 We have good first issues for new contributors and help wanted issues suitable
-for any contributor. [good first issue](https://github.com/sigscalr/hyperion/labels/good%20first%20issue)** has extra information to help you make your first contribution. 
-[help wanted](https://github.com/sigscalr/hyperion/labels/help%20wanted)** are issues suitable for someone who isn't a core maintainer and is good to move onto after your first pull request.
+for any contributor. [good first issue](https://github.com/siglens/siglens/labels/good%20first%20issue) has extra information to help you make your first contribution. 
+[help wanted](https://github.com/siglens/siglens/labels/help%20wanted) are issues suitable for someone who isn't a core maintainer and is good to move onto after your first pull request.
 
 Sometimes there won’t be any issues with these labels. That’s ok! There is
 likely still something for you to work on. If you want to contribute but you
 don’t know where to start or can't find a suitable issue, you can 
-[contact us](https://www.sigscalr.io/contact.html)**
+[contact us](info@siglens.io)
 
 Once you see an issue that you'd like to work on, please post a comment saying
-that you want to work on it. Something like "I want to work on this" is fine.
+that you want to work on it. Something like `"I want to work on this"` is fine.
 
 ## Ask for Help
 
@@ -52,7 +52,7 @@ that you want to work on it. Something like "I want to work on this" is fine.
 The best way to reach us with a question when contributing is to ask on:
 
 * The original github issue
-* Our Slack channel : Hyperion public channel**
+* Our Slack channel : [SigLens Community](https://siglens-community.slack.com)
 
 ## Pull Request Lifecycle
 
@@ -63,10 +63,9 @@ Once you have found the issue to be fixed or feature to be added, you can commen
 3. Make sure local tests work.
 4. Commit your changes to your fork.
 5. Verify that all automated CI tests pass for this PR.
-6. The new PR should not have any conflicts with hyperion develop** branch.
-7. Send us a pull request you just created.
-8. Once the change has been approved and merged, we will inform you in a comment.
-9. Merged pull request changes will be deployed with the next release.
+6. Send us a pull request you just created.
+7. Once the change has been approved and merged, we will inform you in a comment.
+8. Merged pull request changes will be deployed with the next release.
 
 
 ## Development Environment Setup
@@ -131,16 +130,16 @@ lint:
 
 ut:
 ```
-    $(GO) test ./... -count 1
+    go test ./... -count 1
 ```
 build:
 ```
-    $(GO) mod download
-    $(GO) build -o sigscalr cmd/sigscalr/main.go
+    go mod download
+    go build -o sigscalr cmd/sigscalr/main.go
 ```
 
 run:
 ```
-    $(GO) build -o sigscalr cmd/sigscalr/main.go
+    go build -o sigscalr cmd/sigscalr/main.go
     ./sigscalr --config server.yaml
 ```
