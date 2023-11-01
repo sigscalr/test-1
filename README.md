@@ -1,32 +1,38 @@
 # SigLens
 
-SigLens is an open-source observability platform that is 100x faster than the existing tools. SigLens can be used to ingest, store, and query metrics,logs and traces at scale.
+SigLens is an Open Source Observability solution that is **100x** more efficient than Splunk, Elastic. 
 
-## Features:
+# Why SigLens:
+Our experience servicing 10,000+ engineers with Observability tools taught us a few things:
 
-1. Ingest data in various formats such as Elastic, OTEL, Splunk HEC, Loki Ingestion format
-2. Support for different query languages Splunk SPL, SQL and Loki LogQL
-3. UI Compatibility with Grafana Dashboards/UI, Superset UI, Any SQL client/UIs
-4. Simple architecture and easy to get started.
+- Developers have to jump through different tools for logs, metrics, traces
+- Splunk, DataDog, NewRelic are very expensive
+- ElasticSearch takes too many machines, cluster maintainence is hard
+- Grafana Loki has slow query performance
+
+Armed with decades of experience in monitoring domain, we set out to build a observability DB from the ground up, uniquely suited for logs, metrics and traces with **`zero`** external dependency. A **`single binary`** that you can run on your laptop and process `8 TB/day` on it.  
+<br /><br />
+
+
+## Join our Slack community
+
+Come say Hi to us on [Slack](www.siglens.com/slack) 👋
+
+<br /><br />
 
 ## Getting Started
 
-### Start Siglens
+### Using SigLens Binary
 `go run cmd/siglens/main.go --config server.yaml`
 
-#### Synthetic Data
+### Using SigLens Docker
+`TBD`
 
-Use [sigclient](https://github.com/siglens/sigscalr-client) to send synthetic data:
-```
-go run main.go ingest esbulk -t 10_000 -d http://localhost:8081/elastic --processCount 1 -n 1 -b 500 -g dynamic-user
-```
+# Features:
 
-Test Queries:
-```
-go run main.go query esbulk -d http://localhost:80/elastic -n 10 -v
-```
-
-Get started in minutes with: [Binary, Helm, Or Docker](installation.md)
+1. Multiple Ingestion formats: Open Telemetry, Elastic, Splunk HEC, Loki
+2. Multiple Query Languages: Splunk SPL, SQL and Loki LogQL
+3. Simple architecture, easy to get started.
 
 ## Contributing
 
