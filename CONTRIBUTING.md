@@ -29,7 +29,7 @@ We welcome many different types of contributions including:
 * Documentation
 * Issue Triage
 
-Not everything happens through a GitHub pull request. Please join our Slack: [SigLens Community](https://www.sigscalr.io/slack) and let's discuss how we can work together. 
+Not everything happens through a GitHub pull request. Please join our Slack: [SigLens Community](https://www.siglens.com/slack) and let's discuss how we can work together. 
 
 
 ## Find an Issue
@@ -41,7 +41,7 @@ for any contributor. [good first issue](https://github.com/siglens/siglens/label
 Sometimes there won’t be any issues with these labels. That’s ok! There is
 likely still something for you to work on. If you want to contribute but you
 don’t know where to start or can't find a suitable issue, you can 
-join our slack [SigLens Community](https://www.sigscalr.io/slack)
+join our slack [SigLens Community](https://www.siglens.com/slack)
 
 Once you see an issue that you'd like to work on, please post a comment saying
 that you want to work on it. Something like `"I want to work on this"` is fine.
@@ -52,7 +52,7 @@ that you want to work on it. Something like `"I want to work on this"` is fine.
 The best way to reach us with a question when contributing is to ask on:
 
 * The original github issue
-* Our Slack channel : [SigLens Community](https://www.sigscalr.io/slack)
+* Our Slack channel : [SigLens Community](https://www.siglens.com/slack)
 
 ## Pull Request Lifecycle
 
