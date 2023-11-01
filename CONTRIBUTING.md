@@ -29,7 +29,7 @@ We welcome many different types of contributions including:
 * Documentation
 * Issue Triage
 
-Not everything happens through a GitHub pull request. Please email at info@siglens.com and let's discuss how we can work together. 
+Not everything happens through a GitHub pull request. Please join our Slack: [SigLens Community](https://www.sigscalr.io/slack) and let's discuss how we can work together. 
 
 
 ## Find an Issue
@@ -41,7 +41,7 @@ for any contributor. [good first issue](https://github.com/siglens/siglens/label
 Sometimes there won’t be any issues with these labels. That’s ok! There is
 likely still something for you to work on. If you want to contribute but you
 don’t know where to start or can't find a suitable issue, you can 
-reach out to info@siglens.com
+join our slack [SigLens Community](https://www.sigscalr.io/slack)
 
 Once you see an issue that you'd like to work on, please post a comment saying
 that you want to work on it. Something like `"I want to work on this"` is fine.
@@ -52,20 +52,19 @@ that you want to work on it. Something like `"I want to work on this"` is fine.
 The best way to reach us with a question when contributing is to ask on:
 
 * The original github issue
-* Our Slack channel : [SigLens Community](www.sigscalr.io/slack)
+* Our Slack channel : [SigLens Community](https://www.sigscalr.io/slack)
 
 ## Pull Request Lifecycle
 
 Once you have found the issue to be fixed or feature to be added, you can comment on the issue and put the approach you want to follow to solve the issue. Once we agree upon the approach, you can open a PR.
 
 1. Fork Siglens repo and clone it on your local machine.
-2. Create branch with your changes.
-3. Make sure local tests work.
-4. Commit your changes to your fork.
-5. Verify that all automated CI tests pass for this PR.
-6. Send us a pull request you just created.
-7. Once the change has been approved and merged, we will inform you in a comment.
-8. Merged pull request changes will be deployed with the next release.
+2. Make sure local tests work.
+3. Commit your changes to your fork.
+4. Verify that all automated CI tests pass for this PR.
+5. Send us a pull request you just created.
+6. Once the change has been approved and merged, we will inform you in a comment.
+7. Merged pull request changes will be deployed with the next release.
 
 
 ## Development Environment Setup
@@ -77,17 +76,17 @@ To locally run `golinter`, install from https://golangci-lint.run/usage/install/
 
 ### Start up Siglens
 
-Once golang is installed, start up Siglens by running the following command at the root of the repo:
+Once golang is installed, start up SigLens by running the following command at the root of the repo:
 ```
 go run cmd/siglens/main.go --config server.yaml
 ```
 
 By default, the UI server will start up on port `80` and the backend will start on port `8081`.
 
-You should be able to access `http://localhost:80` and see the Siglens UI. If you are not able to, check `siglens.log` for any error messages.
+You should be able to access `http://localhost:80` and see the SigLens UI. If you are not able to, check `siglens.log` for any error messages.
 
 
-### Send Data to Siglens
+### Send Data to SigLens
 
 To send data, clone the [sigscalr-client](https://github.com/sigscalr/sigscalr-client) repo.
 
@@ -140,6 +139,5 @@ build:
 
 run:
 ```
-    go build -o siglens cmd/siglens/main.go
-    ./siglens --config server.yaml
+    go run cmd/siglens/main.go --config server.yaml
 ```
