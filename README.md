@@ -52,11 +52,11 @@ Check out this [blog](https://www.sigscalr.io/blog/sigscalr-vs-clickhouse.html) 
 ### SigLens v/s Splunk/Elastic/Loki  
 Check out this [blog](https://www.sigscalr.io/blog/petabyte-of-observability-data.html) where SigLens ingested data at 1 PB/day rate for 24 hours on a mere `32 EC2 instances` compared to `3000 EC2 instances` required for Splunk, Elastic, Grafana Loki
 
-## Contributing
+# Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) to get started with making contributions to SigLens.
 
-## Usability
+# Usability
 
 #### Searching Logs
 `TBD`
